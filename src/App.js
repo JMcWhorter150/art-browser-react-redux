@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ArtSearch from './containers/ArtSearchContainer';
+
+import {createStore} from 'redux';
+import { art } from './reducers';
+import {actionSearch} from './actions';
+import {Provider} from 'react-redux';
+
+const store = createStore(art);
+store.subscribe(() => {
+    console.table(store.getState());
+});
+store.dispatch(actionSearch('sunflowers'));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App App-header">
+      <Provider store={store}>
+        <ArtSearch />
+      </Provider>
     </div>
   );
 }
