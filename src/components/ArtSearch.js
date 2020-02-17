@@ -3,7 +3,7 @@ import React from 'react';
 export default class ArtSearch extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
             search: ""
         }
@@ -11,7 +11,8 @@ export default class ArtSearch extends React.Component {
     render () {
         return (
                 <form onSubmit={this._handleSubmit}>
-                    <input onChange={this._handleChange} value={this.state.search}></input>
+                    <input onChange={this._handleChange} onSubmit={this._handleSubmit} placeholder="Art?!?" value={this.state.search}></input>
+                    <br />
                     <button type='submit'>Submit</button>
                 </form>
         );
