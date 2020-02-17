@@ -15,11 +15,6 @@ const store = createStore(art, applyMiddleware(ReduxThunk));
 // redux-thunk lets you write actions that return FUNCTIONS instead of objects.
 // You can write multi-step dispatches.
 
-store.subscribe(() => {
-    console.table(store.getState());
-});
-store.dispatch(actionSearch('sunflowers'));
-
 function App() {
   return (
     <div className="App App-header">

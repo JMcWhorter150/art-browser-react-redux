@@ -6,9 +6,7 @@ import Axios from 'axios';
 // const url = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=sunflowers`;
 function mapDispatchToProps(dispatch) {
     return {
-        handleClick: () => {
-            dispatch(asyncActionGetResults('marble'))
-        }
+        handleSubmit: (search) => {dispatch(asyncActionGetResults(search))}
         // handleClick: async () => {
         //     dispatch(actionLoading(true));
         //     const result = await Axios.get(url);
