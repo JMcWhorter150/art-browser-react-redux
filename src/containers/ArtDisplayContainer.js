@@ -3,10 +3,10 @@ import ArtDisplay from '../components/ArtDisplay';
 
 function mapStateToProps(state) {
     return {
-        title: state.currentResult.title,
-        year: state.currentResult.objectDate,
-        artist: state.currentResult.artistDisplayName,
-        src: state.currentResult.primaryImageSmall,
+        title: state.art.currentResult.title,
+        year: state.art.currentResult.objectDate,
+        artist: state.art.currentResult.artistDisplayName,
+        src: state.art.currentResult.primaryImageSmall,
     }
 }
 

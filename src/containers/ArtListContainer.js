@@ -4,7 +4,7 @@ import { actionSelect, asyncActionSelectArt } from '../actions';
 
 function mapStateToProps(state) {
     return {
-        artList: state.results
+        artList: state.art.results
     }
 }
 

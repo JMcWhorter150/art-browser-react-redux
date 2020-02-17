@@ -1,4 +1,5 @@
-import { SEARCH, SELECT, RESULTS, LOADING, SELECT_ART, CLEAR_LIST} from "./actions";
+import { SEARCH, SELECT, RESULTS, LOADING, SELECT_ART, CLEAR_LIST, ADD_FAVORITE, REM_FAVORITE, SELECT_FAVORITE} from "./actions";
+import {combineReducers} from 'redux';
 
 const defaultState = {
     query: '',
@@ -6,7 +7,13 @@ const defaultState = {
     currentResult: {},
     isLoading: false
 }
-export function art(state=defaultState, action) {
+
+const favoritesState = {
+    currentFavorite: 0,
+    favorites: [
+]};
+
+function art(state=defaultState, action) {
     switch(action.type) {
         case SEARCH:
             // maybe? we do axios here?
@@ -45,3 +52,27 @@ export function art(state=defaultState, action) {
             }
     }
 }
+
+function favorites(state=favoritesState, action) {
+    const newState = {...state};
+
+    switch(action.type) {
+        case ADD_FAVORITE:
+            newState.favorites.push(action.payload);
+            break;
+        case REM_FAVORITE:
+            newState.favorites.splice(action.payload, 1);
+            break;
+        case SELECT_FAVORITE:
+            newState.currentFavorite = action.payload;
+            break;
+        default:
+            break;
+    }
+
+    return newState;
+}
+
+const reducers = combineReducers({art, favorites})
+
+export default reducers;
