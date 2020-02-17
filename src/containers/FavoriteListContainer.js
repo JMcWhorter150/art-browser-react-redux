@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import { actionSelectFavorite } from '../actions';
+import { actionSetFavorite } from '../actions';
 import FavoriteList from '../components/FavoriteList';
 
 function mapStateToProps(state) {
@@ -10,7 +10,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        handleClick: (id) => {dispatch(actionSelectFavorite(id))}
+        handleClick: (id) => {
+            dispatch(actionSetFavorite(id))
+        }
     }
 }
 

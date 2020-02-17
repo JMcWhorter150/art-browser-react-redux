@@ -4,7 +4,7 @@ export default function ArtDisplay({title, year, artist, src, handleFavorite}) {
     return (
         <div>
             {title ? 
-            <button onClick={() => handleFavorite({title, year, artist, src})}>Add To Favorites</button>
+            <button onClick={() => handleFavorite({title, objectDate: year, artistDisplayName: artist, primaryImageSmall: src})}>Add To Favorites</button>
             :
             ""}
             <h1>{title}</h1>

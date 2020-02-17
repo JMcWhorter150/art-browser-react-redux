@@ -3,6 +3,7 @@ import ArtDisplay from '../components/ArtDisplay';
 import { actionAddFavorite } from '../actions';
 
 function mapStateToProps(state) {
+    
     return {
         title: state.art.currentResult.title,
         year: state.art.currentResult.objectDate,
