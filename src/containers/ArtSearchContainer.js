@@ -1,7 +1,6 @@
 import {connect} from 'react-redux';
 import ArtSearch from '../components/ArtSearch';
-import { actionSearch, actionResults, actionLoading, asyncActionGetResults } from '../actions';
-import Axios from 'axios';
+import { asyncActionGetResults } from '../actions';
 
 // const url = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=sunflowers`;
 function mapDispatchToProps(dispatch) {

@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
 import ArtSearch from './containers/ArtSearchContainer';
+import ArtList from './containers/ArtListContainer';
+import ArtDisplay from './containers/ArtDisplayContainer';
 
 import {createStore, applyMiddleware} from 'redux';
 import { art } from './reducers';
-import {actionSearch} from './actions';
 import {Provider} from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 
@@ -20,6 +21,8 @@ function App() {
     <div className="App App-header">
       <Provider store={store}>
         <ArtSearch />
+        <ArtList />
+        <ArtDisplay />
       </Provider>
     </div>
   );
