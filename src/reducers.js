@@ -8,11 +8,6 @@ const defaultState = {
     isLoading: false
 }
 
-const favoritesState = {
-    currentFavorite: 0,
-    favorites: [
-]};
-
 function art(state=defaultState, action) {
     switch(action.type) {
         case SEARCH:
@@ -52,6 +47,11 @@ function art(state=defaultState, action) {
             }
     }
 }
+
+const favoritesState = {
+    currentFavorite: 0,
+    favorites: [
+]};
 
 function favorites(state=favoritesState, action) {
     const newState = {...state};

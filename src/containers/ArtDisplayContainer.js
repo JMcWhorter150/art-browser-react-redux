@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import ArtDisplay from '../components/ArtDisplay';
+import { actionAddFavorite } from '../actions';
 
 function mapStateToProps(state) {
     return {
@@ -10,5 +11,11 @@ function mapStateToProps(state) {
     }
 }
 
-const reduxConnector = connect(mapStateToProps);
+function mapDispatchToProps(dispatch) {
+    return {
+        handleFavorite: (data) => dispatch(actionAddFavorite(data))
+    }
+}
+
+const reduxConnector = connect(mapStateToProps, mapDispatchToProps);
 export default reduxConnector(ArtDisplay);

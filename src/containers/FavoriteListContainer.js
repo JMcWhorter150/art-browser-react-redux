@@ -1,0 +1,18 @@
+import {connect} from 'react-redux';
+import { actionSelectFavorite } from '../actions';
+import FavoriteList from '../components/FavoriteList';
+
+function mapStateToProps(state) {
+    return {
+        favorites: state.favorites.favorites.map((item) => {return item.title})
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        handleClick: (id) => {dispatch(actionSelectFavorite(id))}
+    }
+}
+
+const reduxConnector = connect(mapStateToProps, mapDispatchToProps);
+export default reduxConnector(FavoriteList);

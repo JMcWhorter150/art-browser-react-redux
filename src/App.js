@@ -8,6 +8,7 @@ import {createStore, applyMiddleware} from 'redux';
 import reducers from './reducers';
 import {Provider} from 'react-redux';
 import ReduxThunk from 'redux-thunk';
+import FavoriteList from './containers/FavoriteListContainer';
 
 // Redux middleware is a function that runs between an action being dispatched and an action being received by the reducer
 // Middleware manipulates actions before they get to the reducer
@@ -22,6 +23,7 @@ function App() {
   return (
     <div className="App App-header">
       <Provider store={store}>
+        <FavoriteList />
         <ArtSearch />
         <ArtList />
         <ArtDisplay />
