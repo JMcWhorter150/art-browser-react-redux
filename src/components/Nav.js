@@ -8,6 +8,8 @@ export default function Nav() {
             <br></br>
             <Link to="/search">Search</Link>
             <br />
+            <Link to='/art'>Art</Link>
+            <br />
             <Link to="/">Home</Link>
         </div>
     )

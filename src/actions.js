@@ -109,7 +109,7 @@ export function actionSelectFavorite(id) {
 export function actionSetFavorite(id) {
     return (dispatch, getState) => {
         dispatch(actionSelectFavorite(id));
-        dispatch(actionSelectArt(getState().favorites.favorites[getState().favorites.currentFavorite]));
+        dispatch(asyncActionSelectArt(getState().favorites.favorites[id]));
         dispatch(actionClearList());
     }
 }

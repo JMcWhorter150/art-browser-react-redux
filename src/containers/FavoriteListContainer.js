@@ -4,7 +4,7 @@ import FavoriteList from '../components/FavoriteList';
 
 function mapStateToProps(state) {
     return {
-        favorites: state.favorites.favorites.map((item) => {return item.title})
+        favorites: state.favorites.favorites
     }
 }
 

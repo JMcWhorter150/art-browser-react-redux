@@ -48,10 +48,12 @@ function art(state=defaultState, action) {
     }
 }
 
+
 const favoritesState = {
     currentFavorite: 0,
-    favorites: [
-]};
+    favorites: Object.keys(window.localStorage).map(key => window.localStorage.getItem(key))
+};
+
 
 function favorites(state=favoritesState, action) {
     const newState = {...state};
@@ -59,8 +61,10 @@ function favorites(state=favoritesState, action) {
     switch(action.type) {
         case ADD_FAVORITE:
             newState.favorites.push(action.payload);
+            window.localStorage.setItem(newState.favorites.length - 1, action.payload);
             break;
         case REM_FAVORITE:
+            window.localStorage.removeItem(action.payload);
             newState.favorites.splice(action.payload, 1);
             break;
         case SELECT_FAVORITE:

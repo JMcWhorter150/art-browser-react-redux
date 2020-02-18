@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function ArtDisplay({title, year, artist, src, handleFavorite}) {
+export default function ArtDisplay({title, year, artist, src, objectID, handleFavorite}) {
     return (
         <div>
             {title ? 
-            <button onClick={() => handleFavorite({title, objectDate: year, artistDisplayName: artist, primaryImageSmall: src})}>Add To Favorites</button>
+            <button onClick={() => handleFavorite(objectID)}>Add To Favorites</button>
             :
             ""}
             <h1>{title}</h1>

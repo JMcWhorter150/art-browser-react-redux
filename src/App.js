@@ -12,7 +12,6 @@ import {Provider} from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import {
   BrowserRouter as Router,
-  Link,
   Route,
   Switch
 } from 'react-router-dom';
@@ -37,10 +36,11 @@ function App() {
           <Route path="/search" >
             <ArtSearch />
             <ArtList />
-            <ArtDisplay />
           </Route>
           <Route path="/favorite">
             <FavoriteList />
+          </Route>
+          <Route path='/art'>
             <ArtDisplay />
           </Route>
           <Route exact path="/">

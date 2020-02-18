@@ -9,6 +9,7 @@ function mapStateToProps(state) {
         year: state.art.currentResult.objectDate,
         artist: state.art.currentResult.artistDisplayName,
         src: state.art.currentResult.primaryImageSmall,
+        objectID: state.art.currentResult.objectID
     }
 }
 
